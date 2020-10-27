@@ -1,0 +1,4 @@
+$("<%= escape_javascript(render 'pages', object: @pages) %>").appendTo("#add-pages").hide().fadeIn('slow');
+$("#more_link").replaceWith("<%= escape_javascript(
+  link_to_next_page(@pages, 'もっと見る', remote: true, id: 'more_link')
+) %>");

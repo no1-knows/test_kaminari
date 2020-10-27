@@ -1,0 +1,28 @@
+<% @pages.each do |page| %>
+	<tr>
+		<td><%= page.id %></td>
+		<td><%= page.c1 %></td>
+		<td><%= page.c2 %></td>
+		<td><%= page.c3 %></td>
+		<td><%= page.c4 %></td>
+		<td><%= page.c5 %></td>
+		<td><%= page.c6 %></td>
+		<td><%= page.c7 %></td>
+		<td><%= page.c8 %></td>
+		<td><%= page.c9 %></td>
+		<td><%= page.c10 %></td>
+		<td><%= page.c11 %></td>
+		<td><%= page.c12 %></td>
+		<td><%= page.c13 %></td>
+		<td><%= page.c14 %></td>
+		<td><%= page.c15 %></td>
+		<td><%= page.c16 %></td>
+		<td><%= page.c17 %></td>
+		<td><%= page.c18 %></td>
+		<td><%= page.c19 %></td>
+		<td><%= page.c20 %></td>
+		<td><%= link_to 'Show', page %></td>
+		<td><%= link_to 'Edit', edit_page_path(page) %></td>
+		<td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+<% end %>
