@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all.page(params[:page]).per(100).order(:id)
+    @pages = Page.all.page(params[:page]).per(20).order(:id)
     # @pages = Page.all
   end
 

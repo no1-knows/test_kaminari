@@ -2,6 +2,35 @@
 
 <h1>Pages</h1>
 
+<!--<ul class="page-list jscroll">-->
+	<%# @pages.each do |page| %>
+<!--		<li>-->
+<!--		<%#= page.id %>|-->
+<!--		<%#= page.c1 %>|-->
+<!--		<%#= page.c2 %>|-->
+<!--		<%#= page.c3 %>|-->
+<!--		<%#= page.c4 %>|-->
+<!--		<%#= page.c5 %>|-->
+<!--		<%#= page.c6 %>|-->
+<!--		<%#= page.c7 %>|-->
+<!--		<%#= page.c8 %>|-->
+<!--		<%#= page.c9 %>|-->
+<!--		<%#= page.c10 %>|-->
+<!--		<%#= page.c11 %>|-->
+<!--		<%#= page.c12 %>|-->
+<!--		<%#= page.c13 %>|-->
+<!--		<%#= page.c14 %>|-->
+<!--		<%#= page.c15 %>|-->
+<!--		<%#= page.c16 %>|-->
+<!--		<%#= page.c17 %>|-->
+<!--		<%#= page.c18 %>|-->
+<!--		<%#= page.c19 %>|-->
+<!--		<%#= page.c20 %>|-->
+<!--		</li>-->
+	<%# end %>
+	<%#= paginate @pages %>
+<!--</ul>-->
+
 <table>
   <thead>
     <tr>
@@ -26,17 +55,26 @@
       <th>C18</th>
       <th>C19</th>
       <th>C20</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody id="add-pages">
+  <tbody class="page-list jscroll">
     <%= render 'pages' %>
+		<tr>
+			<%
+				n = 1
+				n = 3 if @pages.current_page == 1 || @pages.current_page == 500
+				n = 2 if @pages.current_page == 2 || @pages.current_page == 499
+				n = 1 if @pages.current_page == 3 || @pages.current_page == 498
+			%>
+			<%= n %><br>
+
+    <%= paginate @pages, window: n, outer_window: 1 %>
+		</tr>
   </tbody>
 </table>
-<%= paginate @pages %>
-<%= link_to_next_page @pages, 'もっと見る', remote: true, id: 'more_link' %>
+<%#= link_to_next_page @pages, 'もっと見る', remote: true, id: 'more_link' %>
 
-<br>
+<!--<br>-->
 
-<%= link_to 'New Page', new_page_path %>
+<%#= link_to 'New Page', new_page_path %>
