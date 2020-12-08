@@ -67,9 +67,7 @@
 				n = 2 if @pages.current_page == 2 || @pages.current_page == 499
 				n = 1 if @pages.current_page == 3 || @pages.current_page == 498
 			%>
-			<%= n %><br>
-
-    <%= paginate @pages, window: n, outer_window: 1 %>
+      <%= paginate @pages, window: n, outer_window: 1 %>
 		</tr>
   </tbody>
 </table>
