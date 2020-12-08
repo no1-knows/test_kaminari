@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10000.times  do |n|
+500.times  do |n|
 	@moji = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよやりるれろわをん、。'.split(//)
 	@mojisuu = rand(2..50)
 	Page.create(
