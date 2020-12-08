@@ -63,9 +63,9 @@
 		<tr>
 			<%
 				n = 1
-				n = 3 if @pages.current_page == 1 || @pages.current_page == 500
-				n = 2 if @pages.current_page == 2 || @pages.current_page == 499
-				n = 1 if @pages.current_page == 3 || @pages.current_page == 498
+				n = 3 if @pages.current_page == 1 || @pages.current_page == @pages.total_pages
+				n = 2 if @pages.current_page == 2 || @pages.current_page == @pages.total_pages - 1
+				n = 1 if @pages.current_page == 3 || @pages.current_page == @pages.total_pages - 2
 			%>
       <%= paginate @pages, window: n, outer_window: 1 %>
 		</tr>
